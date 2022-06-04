@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\valer\\Documents\\PixelUVMap\\PixelWithUVMap\\PixelWithUVMap\\PixelWithUVMapLibrary\\PixelWithUVMapLibrary.csproj": {}
+    "C:\\Users\\valer\\Documents\\PixelUVMap\\PixelWithUVMap\\UVPixelMap\\UVPixelMap\\UVPixelMap.csproj": {}
   },
   "projects": {
-    "C:\\Users\\valer\\Documents\\PixelUVMap\\PixelWithUVMap\\PixelWithUVMap\\PixelWithUVMapLibrary\\PixelWithUVMapLibrary.csproj": {
+    "C:\\Users\\valer\\Documents\\PixelUVMap\\PixelWithUVMap\\UVPixelMap\\UVPixelMap\\UVPixelMap.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\valer\\Documents\\PixelUVMap\\PixelWithUVMap\\PixelWithUVMap\\PixelWithUVMapLibrary\\PixelWithUVMapLibrary.csproj",
-        "projectName": "PixelWithUVMapLibrary",
-        "projectPath": "C:\\Users\\valer\\Documents\\PixelUVMap\\PixelWithUVMap\\PixelWithUVMap\\PixelWithUVMapLibrary\\PixelWithUVMapLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\valer\\Documents\\PixelUVMap\\PixelWithUVMap\\UVPixelMap\\UVPixelMap\\UVPixelMap.csproj",
+        "projectName": "UVPixelMap",
+        "projectPath": "C:\\Users\\valer\\Documents\\PixelUVMap\\PixelWithUVMap\\UVPixelMap\\UVPixelMap\\UVPixelMap.csproj",
         "packagesPath": "C:\\Users\\valer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\valer\\Documents\\PixelUVMap\\PixelWithUVMap\\PixelWithUVMap\\PixelWithUVMapLibrary\\obj\\",
+        "outputPath": "C:\\Users\\valer\\Documents\\PixelUVMap\\PixelWithUVMap\\UVPixelMap\\UVPixelMap\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
