@@ -6,15 +6,15 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PixelWithUVMapLibrary
 {
-
+   
     public class UVMap
     {
         //Create color array of the texture
         internal Color[,] colorArray2D;
         //How wide is one texture
         internal int oneTileWidth;
-
-
+       
+        
         public UVMap(Texture2D texture, int oneTileWidth)
         {
             this.oneTileWidth = oneTileWidth;
@@ -26,9 +26,9 @@ namespace PixelWithUVMapLibrary
             int iterations = 0;
             //Set color array length which is just a square
             colorArray2D = new Color[oneTileWidth, oneTileWidth];
-            for (int y = 0; y < oneTileWidth; y++)
+            for(int y = 0; y < oneTileWidth; y++)
             {
-                for (int x = 0; x < oneTileWidth; x++)
+                for(int x = 0; x < oneTileWidth; x++)
                 {
                     //Set the color on the x and y cordinates to the color array 
                     colorArray2D[x, y] = colorArray[iterations];
@@ -59,7 +59,7 @@ namespace PixelWithUVMapLibrary
             {
                 for (int x = 0; x < oneTileWidth; x++)
                 {
-
+                    
                     colorArray2D[x, y] = colorArray[iterations];
                     iterations++;
                 }
@@ -68,12 +68,11 @@ namespace PixelWithUVMapLibrary
     }
     public class Source
     {
-        //TextureWithNoColor
-        private Texture2D texture;
+        public Texture2D texture;
 
         public Texture2D coloredTexture;
 
-        private Color[] colorsIntexture;
+        Color[] colorsIntexture;
         public Source(Texture2D texture)
         {
             this.texture = texture;
@@ -82,37 +81,32 @@ namespace PixelWithUVMapLibrary
         }
         public void ChangeUVMap(UVMap uvmap, GraphicsDevice graphicsDevice)
         {
-            //create new 1d array which is going to be the new generated texture
             Color[] colors = new Color[texture.Width * texture.Height];
-            //new colored texture with no colors
             Texture2D ColoredTexture = new Texture2D(graphicsDevice, texture.Width, texture.Width);
 
             int iterations = 0;
-            foreach (Color A in colorsIntexture)
+            foreach(Color A in colorsIntexture)
             {
-                //get the position from source
                 int x = A.R;
                 int y = A.G;
 
-                //set the color array the new color on that position from new uvmap
                 colors[iterations] = uvmap.colorArray2D[x, y];
                 iterations++;
             }
-            //create texture from array which holds the new colors
             ColoredTexture.SetData<Color>(colors);
-            //set it
+
             coloredTexture = ColoredTexture;
         }
-
+       
     }
     public static class Functions
     {
         //Create source from overlay and uvmap
-
+        
         public static Source CreateSource(UVMap map, Overlay overlay, GraphicsDevice graphicsDevice)
         {
             //Throw error if map and overlay doesnt have the same size
-            if (map.oneTileWidth != overlay.oneTileWidth)
+            if(map.oneTileWidth != overlay.oneTileWidth)
             {
                 throw new ArgumentException("UVMap tileWidth cannot differ from the Overlay tileWidth");
             }
@@ -127,12 +121,12 @@ namespace PixelWithUVMapLibrary
             int iterations = 0;
             for (int y = 0; y < ySize; y++)
             {
-                for (int x = 0; x < xSize; x++)
+                for(int x = 0; x < xSize; x++)
                 {
                     //set the 1d array to the color from uv map in position of overlay
                     colorArray2D[iterations] = GetColorFromUVMap(x, y, map, overlay);
                     //if color is transparent
-                    if (colorArray2D[iterations] == new Color(0, 0, 0))
+                    if(colorArray2D[iterations] == new Color(0, 0, 0))
                     {
                         colorArray2D[iterations] = Color.Transparent;
                     }
@@ -149,18 +143,18 @@ namespace PixelWithUVMapLibrary
         {
             //create color that is on x and y from the overlay
             Color color = overlay.colorArray2D[xCurrent, yCurrent];
-            for (int y = 0; y < map.oneTileWidth; y++)
+            for(int y = 0; y < map.oneTileWidth; y++)
             {
-                for (int x = 0; x < map.oneTileWidth; x++)
+                for(int x = 0; x < map.oneTileWidth; x++)
                 {
                     //if the color from overlay is same as color from map se it
-                    if (map.colorArray2D[x, y] == color)
+                    if(map.colorArray2D[x, y] == color)
                     {
-                        return new Color(x, y, 0);
+                        return new Color(x , y , 0);
                     }
                 }
             }
-
+            
             return Color.White;
         }
     }
