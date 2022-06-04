@@ -16,6 +16,11 @@ Look at this video for more explanation: https://www.youtube.com/watch?v=HsOKwUw
 ## How can i use it?
 1. Look at the video above.
 2. In this time https://youtu.be/HsOKwUwL1bE?t=263 you can see how the process is made
-3. Open your project
-4. 
+3. In your pixel editor do the overlay and map like in this time stop(So that each color on uv map is different and in the overlay just connect the right color)
+4. Open your project
+5. In the top type using UVPixelMap
+6. Create new Source variable
+7. In load content create new 2 variables UVMap and Overlay and immediately asign them to new for example:UVMap example = new UVMap(Content.Load<Texture2D>("name"), 32);
+8. There asign source using Fuctions.CreateSource(UVMap you just created, Overlay you just created, graphics device)
+9. each time you want to change tme uvmap just say yourSource.ChangeUVMap()
 
