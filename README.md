@@ -14,6 +14,7 @@ Finally you can use any new or updated UV map and it will change the full sprite
 
 Look at this video for more explanation: https://www.youtube.com/watch?v=HsOKwUwL1bE
 ## How can i use it?
+Download:https://milkshake-games.itch.io/uvpixelmap
 1. Look at the video above.
 2. In this time https://youtu.be/HsOKwUwL1bE?t=263 you can see how the process is made
 3. In your pixel editor do the overlay and map like in this time stop(So that each color on uv map is different and in the overlay just connect the right color)
