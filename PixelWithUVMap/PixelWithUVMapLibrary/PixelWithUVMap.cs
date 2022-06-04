@@ -12,23 +12,23 @@ namespace PixelWithUVMapLibrary
         //Create color array of the texture
         internal Color[,] colorArray2D;
         //How wide is one texture
-        internal int oneTileWidth;
+        internal int textureWidth;
 
 
-        public UVMap(Texture2D texture, int oneTileWidth)
+        public UVMap(Texture2D texture, int textureWidth)
         {
-            this.oneTileWidth = oneTileWidth;
+            this.textureWidth = textureWidth;
             //Create new 1d array with size of all pixels in texture
-            Color[] colorArray = new Color[oneTileWidth * oneTileWidth];
+            Color[] colorArray = new Color[textureWidth * textureWidth];
             //set each color in color array to the texture color
             texture.GetData<Color>(colorArray);
             //make iterations int which will be used later on...
             int iterations = 0;
             //Set color array length which is just a square
-            colorArray2D = new Color[oneTileWidth, oneTileWidth];
-            for (int y = 0; y < oneTileWidth; y++)
+            colorArray2D = new Color[textureWidth, textureWidth];
+            for (int y = 0; y < textureWidth; y++)
             {
-                for (int x = 0; x < oneTileWidth; x++)
+                for (int x = 0; x < textureWidth; x++)
                 {
                     //Set the color on the x and y cordinates to the color array 
                     colorArray2D[x, y] = colorArray[iterations];
@@ -45,19 +45,19 @@ namespace PixelWithUVMapLibrary
         //the same as uvmap just for different texture
 
         internal Color[,] colorArray2D;
-        internal int oneTileWidth;
-        public Overlay(Texture2D texture, int oneTileWidth)
+        internal int textureWidth;
+        public Overlay(Texture2D texture, int textureWidth)
         {
-            this.oneTileWidth = oneTileWidth;
+            this.textureWidth = textureWidth;
 
-            Color[] colorArray = new Color[oneTileWidth * oneTileWidth];
+            Color[] colorArray = new Color[textureWidth * textureWidth];
             texture.GetData<Color>(colorArray);
             int iterations = 0;
 
-            colorArray2D = new Color[oneTileWidth, oneTileWidth];
-            for (int y = 0; y < oneTileWidth; y++)
+            colorArray2D = new Color[textureWidth, textureWidth];
+            for (int y = 0; y < textureWidth; y++)
             {
-                for (int x = 0; x < oneTileWidth; x++)
+                for (int x = 0; x < textureWidth; x++)
                 {
 
                     colorArray2D[x, y] = colorArray[iterations];
@@ -112,13 +112,13 @@ namespace PixelWithUVMapLibrary
         public static Source CreateSource(UVMap map, Overlay overlay, GraphicsDevice graphicsDevice)
         {
             //Throw error if map and overlay doesnt have the same size
-            if (map.oneTileWidth != overlay.oneTileWidth)
+            if (map.textureWidth != overlay.textureWidth)
             {
                 throw new ArgumentException("UVMap tileWidth cannot differ from the Overlay tileWidth");
             }
 
-            int xSize = map.oneTileWidth;
-            int ySize = map.oneTileWidth;
+            int xSize = map.textureWidth;
+            int ySize = map.textureWidth;
             //Create texture for the source with the size of the map and overlay texture
             Texture2D source = new Texture2D(graphicsDevice, xSize, ySize);
             //create 1d array with the size of pixels in map and overlay
@@ -149,9 +149,9 @@ namespace PixelWithUVMapLibrary
         {
             //create color that is on x and y from the overlay
             Color color = overlay.colorArray2D[xCurrent, yCurrent];
-            for (int y = 0; y < map.oneTileWidth; y++)
+            for (int y = 0; y < map.textureWidth; y++)
             {
-                for (int x = 0; x < map.oneTileWidth; x++)
+                for (int x = 0; x < map.textureWidth; x++)
                 {
                     //if the color from overlay is same as color from map se it
                     if (map.colorArray2D[x, y] == color)
