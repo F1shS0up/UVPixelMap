@@ -1,4 +1,4 @@
-# UVMapPixelArt
+# UVPixelMap
 This is a library for **monogame** which is used to make **UV maps**.
 
 ## Why should i get this?
