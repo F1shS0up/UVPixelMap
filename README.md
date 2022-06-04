@@ -13,3 +13,9 @@ Then you will use my library to generate new sprite sheet with colors that will 
 Finally you can use any new or updated UV map and it will change the full sprite sheet.
 
 Look at this video for more explanation: https://www.youtube.com/watch?v=HsOKwUwL1bE
+## How can i use it?
+1. Look at the video above.
+2. In this time https://youtu.be/HsOKwUwL1bE?t=263 you can see how the process is made
+3. Open your project
+4. 
+
