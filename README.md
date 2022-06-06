@@ -25,5 +25,5 @@ Download:https://milkshake-games.itch.io/uvpixelmap
 8. each time you want to change tme uvmap just say yourSource.ChangeUVMap()
 9. Bonus: If you have sprite sheet of uv maps you can use different function called decrypt which turns sprite sheet into smaller uv maps.
   
-![alt text](file:///C:/Users/valer/Videos/Captures/UVMapForPlayer.png%20-%20Aseprite%20v1.2.21-dev%2006.06.2022%2022_06_57_LI.jpg)
+![img](file:///C:/Users/valer/Videos/Captures/ShooterGame%20-%20Microsoft%20Visual%20Studio%2006.06.2022%2022_07_04_LI.jpg)
 
