@@ -13,3 +13,14 @@ Then you will use my library to generate new sprite sheet with colors that will 
 Finally you can use any new or updated UV map and it will change the full sprite sheet.
 
 Look at this video for more explanation: https://www.youtube.com/watch?v=HsOKwUwL1bE
+## How can i use it?
+Download:https://milkshake-games.itch.io/uvpixelmap
+1. Look at the video above.
+2. In this time https://youtu.be/HsOKwUwL1bE?t=263 you can see how the process is made
+3. Open your project
+4. In the top type using UVPixelMap
+5. Create new Source variable
+6. In load content create new 2 variables UVMap and Overlay and immediately asign them to new for example:UVMap example = new UVMap(Content.Load<Texture2D>("name"), 32);
+7. There asign source using Fuctions.CreateSource(UVMap you just created, Overlay you just created, graphics device)
+8. each time you want to change tme uvmap just say yourSource.ChangeUVMap()
+
