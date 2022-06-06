@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 
 
 namespace UVPixelMap
-{ 
+{
 
     public class UVMap
     {
@@ -46,16 +46,17 @@ namespace UVPixelMap
 
         internal Color[,] colorArray2D;
         internal int textureWidth;
-        public Overlay(Texture2D texture, int textureWidth)
+        internal int textureHeight;
+        public Overlay(Texture2D texture, int textureWidth, int textureHeight)
         {
             this.textureWidth = textureWidth;
-
-            Color[] colorArray = new Color[textureWidth * textureWidth];
+            this.textureHeight = textureHeight;
+            Color[] colorArray = new Color[textureWidth * textureHeight];
             texture.GetData<Color>(colorArray);
             int iterations = 0;
 
-            colorArray2D = new Color[textureWidth, textureWidth];
-            for (int y = 0; y < textureWidth; y++)
+            colorArray2D = new Color[textureWidth, textureHeight];
+            for (int y = 0; y < textureHeight; y++)
             {
                 for (int x = 0; x < textureWidth; x++)
                 {
@@ -77,7 +78,7 @@ namespace UVPixelMap
         public Source(Texture2D texture)
         {
             this.texture = texture;
-            colorsIntexture = new Color[texture.Width * texture.Width];
+            colorsIntexture = new Color[texture.Width * texture.Height];
             texture.GetData<Color>(colorsIntexture);
         }
         public void ChangeUVMap(UVMap uvmap, GraphicsDevice graphicsDevice)
@@ -85,7 +86,7 @@ namespace UVPixelMap
             //create new 1d array which is going to be the new generated texture
             Color[] colors = new Color[texture.Width * texture.Height];
             //new colored texture with no colors
-            Texture2D ColoredTexture = new Texture2D(graphicsDevice, texture.Width, texture.Width);
+            Texture2D ColoredTexture = new Texture2D(graphicsDevice, texture.Width, texture.Height);
 
             int iterations = 0;
             foreach (Color A in colorsIntexture)
@@ -112,13 +113,10 @@ namespace UVPixelMap
         public static Source CreateSource(UVMap map, Overlay overlay, GraphicsDevice graphicsDevice)
         {
             //Throw error if map and overlay doesnt have the same size
-            if (map.textureWidth != overlay.textureWidth)
-            {
-                throw new ArgumentException("UVMap tileWidth cannot differ from the Overlay tileWidth");
-            }
 
-            int xSize = map.textureWidth;
-            int ySize = map.textureWidth;
+
+            int xSize = overlay.textureWidth;
+            int ySize = overlay.textureHeight;
             //Create texture for the source with the size of the map and overlay texture
             Texture2D source = new Texture2D(graphicsDevice, xSize, ySize);
             //create 1d array with the size of pixels in map and overlay

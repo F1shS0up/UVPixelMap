@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "5ARHHuMUEVjyse1Srjt5si9voOCJ8nu6dpL46R+2vQz7N3I7KRuyBPzHTHb9uue+wtn3bnxrfGMvt3vlOSe1xA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\valer\\Documents\\PixelUVMap\\PixelWithUVMap\\UVPixelMap\\UVPixelMap\\UVPixelMap.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\valer\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\valer\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"
+  ],
+  "logs": []
+}
