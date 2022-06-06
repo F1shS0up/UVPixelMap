@@ -23,4 +23,7 @@ Download:https://milkshake-games.itch.io/uvpixelmap
 6. In load content create new 2 variables UVMap and Overlay and immediately asign them to new for example:UVMap example = new UVMap(Content.Load<Texture2D>("name"), 32);
 7. There asign source using Fuctions.CreateSource(UVMap you just created, Overlay you just created, graphics device)
 8. each time you want to change tme uvmap just say yourSource.ChangeUVMap()
+9. Bonus: If you have sprite sheet of uv maps you can use different function called decrypt which turns sprite sheet into smaller uv maps.
+  
+![alt text](file:///C:/Users/valer/Videos/Captures/UVMapForPlayer.png%20-%20Aseprite%20v1.2.21-dev%2006.06.2022%2022_06_57_LI.jpg)
 
